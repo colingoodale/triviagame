@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <script src="./javascript/javascript.js"></script>
+</head>
+
+<body>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'>
+            //create question array in js file
+            // choose random quesiton, console.log
+            //call question with OnCLick   
+            $("#start").on("click", function () {
+                if (gotQuestion = false) {
+                    gotQuestion = true;
+                    chooseQuestion();
+                    console.log(chosenQuestion);
+                } else {
+                    alert("Please Answer the Question!");
+                }
+            })
+
+
+
+
+
+        </script>
+    <h1>TRIVIA</h1>
+    <div>
+        <h4 id="question">This is the Question you're answering?</h4>
+        <div id='timer'>30</div>
+        <button id="start">Hit This For Question</button>
+
+    </div>
+
+</body>
+
+</html>
