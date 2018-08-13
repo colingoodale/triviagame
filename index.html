@@ -7,37 +7,130 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
     <script src="./javascript/javascript.js"></script>
 </head>
 
 <body>
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
-        crossorigin='anonymous'>
-            //create question array in js file
-            // choose random quesiton, console.log
-            //call question with OnCLick   
-            $("#start").on("click", function () {
-                if (gotQuestion = false) {
-                    gotQuestion = true;
-                    chooseQuestion();
-                    console.log(chosenQuestion);
-                } else {
-                    alert("Please Answer the Question!");
-                }
-            })
-
-
-
-
-
-        </script>
     <h1>TRIVIA</h1>
     <div>
         <h4 id="question">This is the Question you're answering?</h4>
+        <button id="a0"></button>
+        <button id="a1"></button>
+        <button id="a2"></button>
+        <button id="a3"></button>
         <div id='timer'>30</div>
         <button id="start">Hit This For Question</button>
 
     </div>
+
+
+    <script>
+        //create question array in js file
+        // choose random quesiton, console.log
+        var time;
+        //call question with OnCLick   
+        $("#start").on("click", function () {
+            time = 120;
+            chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+            $("#question").text(chosenQuestion.question);
+            $("#a0").text(chosenQuestion.options[0]);
+            $("#a1").text(chosenQuestion.options[1]);
+            $("#a2").text(chosenQuestion.options[2]);
+            $("#a3").text(chosenQuestion.options[3]);
+
+
+            $('#a0').on("click", function () {
+                if (this.id === chosenQuestion.answer) {
+                    alert("Correct!");
+                    playerScore++;
+                    alert("You Have " + playerScore);
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                } else {
+                    alert("Incorrect!!");
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                };
+            })
+            $('#a1').on("click", function () {
+                if (this.id === chosenQuestion.answer) {
+                    playerScore++;
+                    alert("You Have " + playerScore);
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                } else {
+                    alert("Incorrect!!");
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                };
+            })
+            $('#a2').on("click", function () {
+                if (this.id === chosenQuestion.answer) {
+                    playerScore++;
+                    alert("You Have " + playerScore);
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                } else {
+                    alert("Incorrect!!");
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                };
+            })
+            $('#a3').on("click", function () {
+                if (this.id === chosenQuestion.answer) {
+                    playerScore++;
+                    alert("You Have " + playerScore);
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                } else {
+                    alert("Incorrect!!");
+                    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+                    $("#question").text(chosenQuestion.question);
+                    $("#a0").text(chosenQuestion.options[0]);
+                    $("#a1").text(chosenQuestion.options[1]);
+                    $("#a2").text(chosenQuestion.options[2]);
+                    $("#a3").text(chosenQuestion.options[3]);
+                };
+            })
+        })
+
+
+
+    </script>
+
+
+
+
 
 </body>
 
